@@ -11,3 +11,4 @@ linkedin_search_field_class = "search-global-typeahead__input"
 
 linkedin_username = os.getenv("LINKEDIN_USERNAME")
 linkedin_password = os.getenv("LINKEDIN_PASSWORD")
+chrome_driver = os.getenv("CHROME_DRIVER")

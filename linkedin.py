@@ -10,6 +10,14 @@ import settings
 import time
 import json
 import sys
+  
+options = Options()
+options.add_argument('--headless')
+options.add_argument('--disable-gpu')
+options.add_argument('--no-sandbox')
+driver = webdriver.Chrome(settings.chrome_driver, options=options)
+
+keywords = sys.argv[1]
 
 class Result:
     code = 1
@@ -24,22 +32,14 @@ class Company:
     specialty = ""
     description = ""
     type = "company"
-  
-keywords = sys.argv[1]
+
 result = Result()
 result.code = 1
 result.msg = "Success"
-data   = []
+data = []
+
 try: 
-    options = Options()
-    # options.add_argument('--headless')
-    # options.add_argument('--disable-gpu')
-    # options.add_argument('--no-sandbox')
-
-    driver = webdriver.Chrome('/Users/zeusaaron14/Downloads/chromedriver', options=options)
     driver.get(settings.linkedin_base_url + settings.linkedin_login_url)
-    action = ActionChains(driver)
-
     username = driver.find_element_by_id(settings.linkedin_username_field_id)
     # send_keys() to simulate key strokes
     username.send_keys(settings.linkedin_username)
@@ -121,3 +121,4 @@ finally:
     driver.quit()
     result.data = [ob.__dict__ for ob in data]
     print(json.dumps(result.__dict__))
+

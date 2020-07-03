@@ -40,7 +40,7 @@ try:
     # options.add_argument('--disable-gpu')
     # options.add_argument('--no-sandbox')
 
-    driver = webdriver.Chrome('/Users/zeusaaron14/Downloads/chromedriver', options=options)
+    driver = webdriver.Chrome(settings.settings.chrome_driver, options=options)
     driver.get(settings.linkedin_base_url + settings.linkedin_login_url)
 
     username = driver.find_element_by_id(settings.linkedin_username_field_id)
