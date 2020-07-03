@@ -1,5 +1,8 @@
 reqs:
 	pipreqs --force .
 
-run:
-	python3 linkedin.py ${c}
+company:
+	python3 linkedin.py --keywords=${c} --page=${p} 
+
+jobs:
+	python3 linkedin.py --keywords=${c} 

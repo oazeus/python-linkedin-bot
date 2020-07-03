@@ -4,6 +4,7 @@ load_dotenv()
 linkedin_base_url = "https://www.linkedin.com"
 linkedin_login_url = "/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin"
 linkedin_company_search_url = "/search/results/companies/?origin=TYPEAHEAD_ESCAPE_HATCH"
+linkedin_job_search_url = "/jobs/search"
 linkedin_username_field_id = "username"
 linkedin_password_field_id = "password"
 linkedin_signin_button_class = "sign-in-form__submit-button"
