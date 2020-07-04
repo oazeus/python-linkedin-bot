@@ -17,8 +17,6 @@ if pages > 0:
 else:
     pages = default_pages
 
-print(pages)
-
 code = 1
 msg = "Success"
 data = []
