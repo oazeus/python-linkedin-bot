@@ -127,7 +127,7 @@ if len(elems) > 0:
     else:
         search = False
             # break
-
+driver.quit()
 print(json.dumps(result.__dict__))
 # except:
 #     result.code = 0

@@ -43,7 +43,7 @@ func main() {
 func search(keyword string) {
 	program := "python3"
 	filename := "linkedin.py"
-	cmd := exec.Command(program, filename, keyword)
+	cmd := exec.Command(program, filename, "--keywords="+keyword)
 	fmt.Println("command args:", cmd.Args)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
