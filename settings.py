@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 import os
 load_dotenv()
+chrome_driver = os.getenv("CHROME_DRIVER")
+
 linkedin_base_url = "https://www.linkedin.com"
 linkedin_login_url = "/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin"
 linkedin_company_search_url = "/search/results/companies/?origin=TYPEAHEAD_ESCAPE_HATCH"
@@ -12,4 +14,12 @@ linkedin_search_field_class = "search-global-typeahead__input"
 
 linkedin_username = os.getenv("LINKEDIN_USERNAME")
 linkedin_password = os.getenv("LINKEDIN_PASSWORD")
-chrome_driver = os.getenv("CHROME_DRIVER")
+
+
+fb_base_url = "https://free.facebook.com"
+fb_login_url = "/login/"
+fb_username_field_id = "m_login_email"
+fb_posts_search_url = "/search/posts/?source=filter&isTrending=0"
+fb_username = os.getenv("LINKEDIN_USERNAME")
+fb_password = os.getenv("LINKEDIN_PASSWORD")
+
