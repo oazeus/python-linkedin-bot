@@ -1,4 +1,5 @@
-pandas==0.24.2
 selenium==3.141.0
+pandas==0.24.2
 beautifulsoup4==4.9.1
-python-dotenv==0.13.0
+facebook_scraper==0.2.3
+python-dotenv==0.14.0

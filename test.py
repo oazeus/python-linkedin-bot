@@ -10,7 +10,6 @@ import settings
 import time
 import json
 import sys
-
 from bs4 import BeautifulSoup
 import re
 

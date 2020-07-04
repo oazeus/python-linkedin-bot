@@ -24,10 +24,18 @@ page = 1
 if keywords is None:
     keywords = "orangeapps"
 
+headers = {
+    'Accept': '*/*',
+    'Connection': 'keep-alive',
+}
+
 options = Options()
-options.add_argument('--headless')
-options.add_argument('--disable-gpu')
 options.add_argument('--no-sandbox')
+options.add_argument('--headless')            
+options.add_argument('--disable-extensions')
+options.add_argument('--disable-gpu')
+options.add_argument('--incognito')
+options.add_argument(f'user-agent={headers}')
 driver = webdriver.Chrome(settings.chrome_driver, options=options)
 
 class Result:
@@ -76,6 +84,7 @@ try:
 
     # elems = driver.find_elements_by_class_name('entity-result__item')
     elems = driver.find_elements_by_css_selector('li.job-result-card')
+    print(len(elems))
     if len(elems) > 0:
         for elem in elems: 
             position = company = location = date = image = description = ""
@@ -162,9 +171,10 @@ try:
         else:
             search = False
                 # break
-except:
+except Exception as ex:
     result.code = 0
-    result.msg = "There's an error"
+    result.msg = str(ex)
+    result.data = []
 finally:
     driver.quit()
     result.data = [ob.__dict__ for ob in data]
