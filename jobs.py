@@ -84,7 +84,7 @@ try:
 
     # elems = driver.find_elements_by_class_name('entity-result__item')
     elems = driver.find_elements_by_css_selector('li.job-result-card')
-    print(len(elems))
+    # print(len(elems))
     if len(elems) > 0:
         for elem in elems: 
             position = company = location = date = image = description = ""
@@ -99,61 +99,61 @@ try:
             positionEl = elem.find_elements_by_css_selector('.job-result-card__title')
             if len(positionEl) > 0:
                 position = positionEl[0].text
-                print(position)
+                # print(position)
 
             companyEl = elem.find_elements_by_css_selector('.job-result-card__subtitle')
             if len(companyEl) > 0:
                 company = companyEl[0].text
-                print(company)
+                # print(company)
 
             locationEl = elem.find_elements_by_css_selector('.job-result-card__location')
             if len(locationEl) > 0:
                 location = locationEl[0].text
-                print(location)
+                # print(location)
 
             dateEl = elem.find_elements_by_css_selector('.job-result-card__listdate')
             if len(dateEl) > 0:
                 date = dateEl[0].get_attribute('datetime')
-                print(date)
+                # print(date)
 
 
             imageEl = elem.find_elements_by_css_selector('img.result-card__image');
             if(len(imageEl) > 0):
                 image = imageEl[0].get_attribute("src")
-                print(image)
+                # print(image)
 
             descEl = driver.find_elements_by_css_selector('div.show-more-less-html__markup');
             if(len(descEl) > 0):
                 description = descEl[0].get_attribute('innerHTML')
-                print(description)
+                # print(description)
 
             seniorityEl = driver.find_elements_by_css_selector('ul.job-criteria__list li:nth-child(1) .job-criteria__text');
             if(len(seniorityEl) > 0):
                 for el in seniorityEl:
                     seniorities.append(el.text)
 
-            print(seniorities)
+            # print(seniorities)
 
             empTypeEl = driver.find_elements_by_css_selector('ul.job-criteria__list li:nth-child(2) .job-criteria__text');
             if(len(empTypeEl) > 0):
                 for el in empTypeEl:
                     employment_types.append(el.text)
 
-            print(employment_types)
+            # print(employment_types)
 
             jobFuncEl = driver.find_elements_by_css_selector('ul.job-criteria__list li:nth-child(3) .job-criteria__text');
             if(len(jobFuncEl) > 0):
                 for el in jobFuncEl:
                     job_functions.append(el.text)
 
-            print(job_functions)
+            # print(job_functions)
 
             industryEl = driver.find_elements_by_css_selector('ul.job-criteria__list li:nth-child(4) .job-criteria__text');
             if(len(industryEl) > 0):
                 for el in industryEl:
                     industries.append(el.text)
 
-            print(industries)
+            # print(industries)
 
             job = Job()
             job.position = position 
