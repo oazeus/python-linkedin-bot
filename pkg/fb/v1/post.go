@@ -25,6 +25,7 @@ type Post struct {
 	Likes    int64  `json:"likes"`
 	Comments int64  `json:"comments"`
 	Shares   int64  `json:"shares"`
+	Date     string `json:"time"`
 }
 
 // SearchFacebookPosts return array of posts
