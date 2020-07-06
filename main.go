@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/oazeus/scraper/pkg/fb/v1"
 )
 
@@ -24,6 +26,6 @@ func main() {
 	keywords := []string{"corona", "nike"}
 	posts, _ := v1.SearchFacebookPosts(keywords, 2)
 	for _, post := range posts {
-		// fmt.Println(string(post))
+		fmt.Println(post)
 	}
 }
