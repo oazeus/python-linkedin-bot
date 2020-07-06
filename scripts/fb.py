@@ -21,6 +21,8 @@ code = 1
 msg = "Success"
 data = []
 
+baseUrl = "https://m.facebook.com"
+
 try:
     for post in get_posts(keywords, pages=pages):
         if post['post_id'] is None:
@@ -56,6 +58,8 @@ try:
 
         post['time'] = post['time'].strftime('%Y-%m-%d %H:%M:%S')
         if post["post_id"]:
+            if not post['post_url']:
+                post['post_url'] = baseUrl + '/story.php?id=1&story_fbid=' + post['post_id'] 
             data.append(post)
 except Exception as ex:
     code = 0

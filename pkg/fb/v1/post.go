@@ -7,6 +7,11 @@ import (
 	"strconv"
 )
 
+//Service interface
+type Service interface {
+	SearchFacebookPosts([]string, int) ([]Post, error)
+}
+
 //PostResponse struc
 type PostResponse struct {
 	Code    string `json:"code"`

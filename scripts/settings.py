@@ -15,11 +15,10 @@ linkedin_search_field_class = "search-global-typeahead__input"
 linkedin_username = os.getenv("LINKEDIN_USERNAME")
 linkedin_password = os.getenv("LINKEDIN_PASSWORD")
 
-
 fb_base_url = "https://mbasic.facebook.com"
 fb_login_url = "/login/"
 fb_username_field_id = "m_login_email"
 fb_posts_search_url = "/search/posts/?source=filter&isTrending=0"
 fb_username = os.getenv("LINKEDIN_USERNAME")
-fb_password = os.getenv("LINKEDIN_PASSWORD")
+fb_password = os.getenv("FB_PASSWORD")
 
