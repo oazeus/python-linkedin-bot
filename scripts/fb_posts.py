@@ -282,7 +282,7 @@ if __name__ == '__main__':
         result.code = "0"
         result.msg  = str(ex)
     finally:
-        chome_driver.quit()
+        # chome_driver.quit()
         result.data = [ob.__dict__ for ob in result.data]
         print(json.dumps(result.__dict__))
 

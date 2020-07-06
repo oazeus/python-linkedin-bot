@@ -50,9 +50,13 @@ try:
         if post['image'] is None:
             post['image'] = ''
 
+        if post['text'] is None:
+            post['text'] = ''
+
 
         post['time'] = post['time'].strftime('%Y-%m-%d %H:%M:%S')
-        data.append(post)
+        if post["post_id"]:
+            data.append(post)
 except Exception as ex:
     code = 0
     msg = str(ex)

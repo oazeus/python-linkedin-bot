@@ -1,12 +1,9 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
-	"os"
-	"os/exec"
-	"os/signal"
-	"strings"
+
+	"github.com/oazeus/scraper/pkg/fb/v1"
 )
 
 type LinkedInResponse struct {
@@ -26,10 +23,13 @@ type LinkedInCompany struct {
 }
 
 func main() {
-	keywords := []string{"corona", "covid"}
-	toSearch := strings.Join(keywords[:], ",")
-	go 
-	quit := make(chan os.Signal)
-	signal.Notify(quit, os.Interrupt)
-	<-quit
+	keywords := []string{"corona", "nike"}
+	// _ := strings.Join(keywords[:], ",")
+	posts, _ := v1.SearchFacebookPosts(keywords, 2)
+	for _, post := range posts {
+		fmt.Println(post.Text)
+	}
+	// quit := make(chan os.Signal)
+	// signal.Notify(quit, os.Interrupt)
+	// <-quit
 }

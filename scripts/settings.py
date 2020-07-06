@@ -16,7 +16,7 @@ linkedin_username = os.getenv("LINKEDIN_USERNAME")
 linkedin_password = os.getenv("LINKEDIN_PASSWORD")
 
 
-fb_base_url = "https://free.facebook.com"
+fb_base_url = "https://mbasic.facebook.com"
 fb_login_url = "/login/"
 fb_username_field_id = "m_login_email"
 fb_posts_search_url = "/search/posts/?source=filter&isTrending=0"
