@@ -7,11 +7,6 @@ import (
 	"strconv"
 )
 
-//PostService interface
-type PostService interface {
-	SearchFacebookPosts([]string, int) ([]Post, error)
-}
-
 //PostStruct struct
 type PostStruct struct {
 }
@@ -37,8 +32,8 @@ type Post struct {
 	Date     string `json:"time"`
 }
 
-// SearchFacebookPosts return array of posts
-func (p *PostStruct) SearchFacebookPosts(keywords []string, pages int) ([]Post, error) {
+// Search return array of posts
+func (p *PostStruct) Search(keywords []string, pages int) ([]Post, error) {
 	var res []Post
 	if len(keywords) > 0 {
 		for _, keyword := range keywords {

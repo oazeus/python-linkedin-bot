@@ -24,7 +24,8 @@ type LinkedInCompany struct {
 
 func main() {
 	keywords := []string{"corona", "nike"}
-	posts, _ := v1.SearchFacebookPosts(keywords, 2)
+	postV1 := &v1.PostStruct{}
+	posts, _ := postV1.Search(keywords, 2)
 	for _, post := range posts {
 		fmt.Println(post)
 	}
